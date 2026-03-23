@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typing Test | TypeMaster 2026</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#141e30,#243b55);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    width:95%;
+    max-width:900px;
+    padding:40px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.stat{
+    background:rgba(255,255,255,0.08);
+    padding:10px 20px;
+    border-radius:10px;
+}
+
+.text-display{
+    background:#111;
+    padding:20px;
+    border-radius:12px;
+    line-height:1.8;
+    font-size:18px;
+    min-height:120px;
+}
+
+.text-display span.correct{
+    color:#2ecc71;
+}
+
+.text-display span.incorrect{
+    color:#ff4757;
+}
+
+.text-display span.active{
+    text-decoration:underline;
+}
+
+textarea{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    font-size:16px;
+    resize:none;
+    height:100px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:#00f5ff;
+    font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Typing Test</h1>
+
+    <div class="stats">
+        <div class="stat">Time: <span id="time">60</span>s</div>
+        <div class="stat">WPM: <span id="wpm">0</span></div>
+        <div class="stat">Accuracy: <span id="accuracy">100</span>%</div>
+    </div>
+
+    <div class="text-display" id="textDisplay"></div>
+
+    <textarea id="input" placeholder="Start typing here..."></textarea>
+
+    <button onclick="restartTest()">Restart</button>
+</div>
+
+<script>
+const text = "Typing regularly improves focus and builds muscle memory. Practice every day to increase your typing speed and accuracy naturally.";
+
+const textDisplay = document.getElementById("textDisplay");
+const input = document.getElementById("input");
+const timeElement = document.getElementById("time");
+const wpmElement = document.getElementById("wpm");
+const accuracyElement = document.getElementById("accuracy");
+
+let timer = 60;
+let interval = null;
+
+function loadText(){
+    textDisplay.innerHTML = "";
+    text.split("").forEach(char=>{
+        const span = document.createElement("span");
+        span.innerText = char;
+        textDisplay.appendChild(span);
+    });
+    textDisplay.querySelector("span").classList.add("active");
+}
+
+function startTimer(){
+    if(interval) return;
+    interval = setInterval(()=>{
+        timer--;
+        timeElement.innerText = timer;
+        if(timer === 0){
+            clearInterval(interval);
+            input.disabled = true;
+        }
+    },1000);
+}
+
+input.addEventListener("input", ()=>{
+    startTimer();
+
+    const characters = textDisplay.querySelectorAll("span");
+    const typed = input.value.split("");
+
+    let correctCount = 0;
+
+    characters.forEach((charSpan,index)=>{
+        const typedChar = typed[index];
+
+        if(typedChar == null){
+            charSpan.classList.remove("correct","incorrect");
+        } else if(typedChar === charSpan.innerText){
+            charSpan.classList.add("correct");
+            charSpan.classList.remove("incorrect");
+            correctCount++;
+        } else{
+            charSpan.classList.add("incorrect");
+            charSpan.classList.remove("correct");
+        }
+    });
+
+    const wpm = Math.round((correctCount / 5) / ((60 - timer)/60));
+    wpmElement.innerText = wpm > 0 ? wpm : 0;
+
+    const accuracy = Math.round((correctCount / typed.length) * 100);
+    accuracyElement.innerText = accuracy || 100;
+});
+
+function restartTest(){
+    timer = 60;
+    timeElement.innerText = timer;
+    wpmElement.innerText = 0;
+    accuracyElement.innerText = 100;
+    input.value = "";
+    input.disabled = false;
+    clearInterval(interval);
+    interval = null;
+    loadText();
+}
+
+loadText();
+</script>
+
+</body>
+</html>

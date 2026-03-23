@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | TypeMaster 2026</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    min-height:100vh;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.subtitle{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:0.9rem;
+    color:#00f5ff;
+}
+
+h1{
+    font-size:3rem;
+    margin:15px 0;
+    font-weight:700;
+}
+
+.mission{
+    max-width:600px;
+    margin:0 auto 50px;
+    color:#dfe6e9;
+    font-size:0.95rem;
+}
+
+/* TEAM GRID */
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* GLASS CARD */
+.card{
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:35px 25px;
+    border-radius:20px;
+    transition:0.4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,255,255,0.25);
+}
+
+.avatar{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#00f5ff,#00d4ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2.2rem;
+    margin:0 auto 15px;
+    color:#111;
+}
+
+.card h3{
+    margin-bottom:5px;
+}
+
+.role{
+    color:#00f5ff;
+    font-size:0.85rem;
+    font-weight:600;
+    margin-bottom:15px;
+    display:block;
+}
+
+.desc{
+    font-size:0.9rem;
+    color:#ecf0f1;
+}
+
+/* BUTTON */
+.back-btn{
+    display:inline-block;
+    margin-top:60px;
+    padding:12px 35px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#00f5ff,#00d4ff);
+    color:#111;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(0,255,255,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <p class="subtitle">Our Creative Squad</p>
+    <h1>Meet The Builders</h1>
+    <p class="mission">
+        We design powerful typing experiences that transform practice into measurable progress.
+        Precision. Speed. Intelligence.
+    </p>
+
+    <div class="team-grid">
+
+        <div class="card">
+            <div class="avatar">👨‍💻</div>
+            <h3>Sreysoth Samreth</h3>
+            <span class="role">Lead Developer & UI Architect</span>
+            <p class="desc">
+                Designs the interface structure, user flows, and overall visual system of TypeMaster 2026.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">👩‍💻</div>
+            <h3>Sopheary</h3>
+            <span class="role">Data & Security Engineer</span>
+            <p class="desc">
+                Builds secure performance tracking systems and advanced analytics dashboards.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="avatar">⚡</div>
+            <h3>Sangexie</h3>
+            <span class="role">Typing Engine Specialist</span>
+            <p class="desc">
+                Develops the real-time typing logic and performance evaluation engine.
+            </p>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">Back to Home</a>
+
+</div>
+
+</body>
+</html>
