@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TypeMaster 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9fbff;
+            color: #2d3436;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header-section {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #3498db;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mission-text {
+            max-width: 700px;
+            margin: 20px auto;
+            color: #636e72;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-top: 5px solid #3498db;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background-color: #ecf0f1;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        .team-card h3 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .role {
+            font-size: 0.9rem;
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .back-home {
+            margin-top: 50px;
+            display: inline-block;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: 600;
+            border: 2px solid #3498db;
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .back-home:hover {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section class="header-section">
+            <p class="subtitle">Our Team</p>
+            <h1>Meet the Creators</h1>
+            <p class="mission-text">
+                We are a passionate team of developers dedicated to helping users 
+                improve their typing productivity through data-driven practice.
+            </p>
+        </section>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar">👨‍💻</div>
+                <h3>Sreysoth Samreth</h3>
+                <span class="role">Lead Developer & UI/UX</span>
+                <p class="description">Responsible for the core interface, registration systems, and project documentation.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="avatar">👩‍💻</div>
+                <h3>Sopheary</h3>
+                <span class="role">Data & Security Engineer</span>
+                <p class="description">Specializes in performance tracking, result visualization, and account security.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="avatar">⚡</div>
+                <h3>Sangexie</h3>
+                <span class="role">Logic & Engine Specialist</span>
+                <p class="description">Developed the typing engine logic and the overall about-us experience.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-home">Return to Home</a>
+
+        <footer style="margin-top: 60px; color: #bdc3c7; font-size: 0.8rem;">
+            © 2026 TypeMaster Project
+        </footer>
+    </div>
+
+</body>
+</html>
