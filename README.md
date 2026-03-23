@@ -1,5 +1,5 @@
 # i3_typing_master_2026
-- Welcome menu screen => Sreysoth Samreth (YOU)
+- Welcome menu screen => Sreysoth Samreth 
 - User registering screen => Sopheary
 - User reset password screen => OusapheaSun
 - User login screen => Sagexie
