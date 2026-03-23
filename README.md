@@ -1,9 +1,9 @@
 # i3_typing_master_2026
 - Welcome menu screen => Sreysoth Samreth (YOU)
-- User registering screen => Bopha
-- User reset password screen => Dara
-- User login screen => Bopha
-- List of test results for a user => Dara
-- User typing test screen => Bopha
-- About Us screen => Dara
-- README.md (setup instructions) => Bopha
+- User registering screen => Sopheary
+- User reset password screen => OusapheaSun
+- User login screen => Sagexie
+- List of test results for a user => Sreysoth
+- User typing test screen => Mesa
+- About Us screen => Sang
+- README.md (setup instructions) => Mony
